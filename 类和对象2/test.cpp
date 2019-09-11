@@ -76,36 +76,182 @@ using namespace std;
 //有且只有一个
 //类名前加字符 ~
 //5.先构造的后析构
-typedef int DataType;
-class SeqList
-{
-public:
-	SeqList(int capacity = 10)
-	{
-		//初始化
-		_pData = (DataType*)malloc(capacity * sizeof(DataType));
-		assert(_pData);
-		_size = 0;
-		_capacity = capacity;
-	}
-	~SeqList()
-	{
-		//清理
-		if (_pData)
-		{
-			free(_pData); // 释放堆上的空间
-			_pData = nullptr; // 将指针置为空
-			_capacity = 0;
-			_size = 0;
-		}
-	}
-private:
-	int* _pData;
-	size_t _size;
-	size_t _capacity;
-};
-int main()
-{
-	SeqList s1;
-	return 0;
-}
+//typedef int DataType;
+//class SeqList
+//{
+//public:
+//	SeqList(int capacity = 10)
+//	{
+//		//初始化
+//		_pData = (DataType*)malloc(capacity * sizeof(DataType));
+//		assert(_pData);
+//		_size = 0;
+//		_capacity = capacity;
+//	}
+//	~SeqList()
+//	{
+//		//清理
+//		if (_pData)
+//		{
+//			free(_pData); // 释放堆上的空间
+//			_pData = nullptr; // 将指针置为空
+//			_capacity = 0;
+//			_size = 0;
+//		}
+//	}
+//private:
+//	int* _pData;
+//	size_t _size;
+//	size_t _capacity;
+//};
+//int main()
+//{
+//	SeqList s1;
+//	return 0;
+//}
+//6.拷贝构造函数
+//参数只有一个
+//是构造函数的重载形式
+//默认的拷贝我们称为值拷贝或者浅拷贝
+//class Date
+//{
+//public:
+//	Date(int year = 1900, int month = 1, int day = 1)
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//	void Print()
+//	{
+//		cout << _year << "-" << _month << "-" << _day << endl;
+//	} 
+//	Date(const Date& d)//必须引用传参  const  是防止拷贝构造的同时修改了原内容
+//	{
+//		_year = d._year;
+//		_month = d._month;
+//		_day = d._day;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//int main()
+//{
+//	Date d1(2018,9,10);
+//	d1.Print();
+//
+//	Date d2(d1);//拷贝构造
+//	d2.Print();
+//
+//	return 0;
+//}
+//深拷贝才可以解决这个程序会崩溃的问题，之后在学习
+//class String
+//{
+//public:
+//	String(const char* str = "jack")
+//	{
+//		_str = (char*)malloc(strlen(str) + 1);
+//		strcpy(_str, str);
+//	}
+//	~String()
+//	{
+//		cout << "~String()" << endl;
+//		free(_str);
+//	}
+//private:
+//	char* _str;
+//};
+//int main()
+//{
+//	String s1("hello");
+//	String s2(s1);//不能释放两次
+//}
+//7.运算符的重载
+// 全局的operator==
+//class Date
+//{
+//public:
+//	Date(int year = 1900, int month = 1, int day = 1)
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//	bool operator==(const Date& d) //有个隐含的this指针 指向的是第一个d1   d2传给的是d
+//	{
+//		return (_year == d._year)
+//			&& (_month == d._month)
+//			&& (_day == d._day);
+//	}
+//	Date& operator=(const Date& d)//
+//	{
+//		if (this != &d)//防止自己给自己赋值
+//		{
+//			_year = d._year;
+//			_month = d._month;
+//			_day = d._day;
+//		}
+//		return *this;//出了作用域还在用引用返回
+//	}
+//	/*bool operator<(const Date& d1, const Date& d2) {
+//		return (d1._year < d2._year)
+//			|| (d1._year == d2._year && d1._month < d2._month)
+//			|| (d1._year == d2._year && d1._month == d2._month && d1._day < d2._day);
+//	}*/
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+// 这里会发现运算符重载成全局的就需要成员变量是共有的，那么问题来了，封装性如何保证？
+// 这里其实可以用我们后面学习的友元解决，或者干脆重载成成员函数。
+//bool operator==(const Date& d1, const Date& d2) {
+//	return (d1._year == d2._year)
+//	&& (d1._month == d2._month)
+//		&& (d1._day == d2._day);
+//}
+//bool operator<(const Date& d1, const Date& d2) {
+//	return (d1._year < d2._year)
+//		|| (d1._year == d2._year && d1._month < d2._month)
+//		|| (d1._year == d2._year && d1._month == d2._month && d1._day < d2._day);
+//}
+//int main()
+//{
+//	Date d1(2018, 9, 26);
+//	Date d2(2018, 9, 27);
+//	cout << (d1 == d2) << endl;
+//	d1 = d2;
+//	cout << (d1 == d2) << endl;
+//	//cout << (d1 < d2) << endl;
+//}
+//class Date
+//{
+//public:
+//	Date(int year = 1900, int month = 1, int day = 1)
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//	// bool operator==(Date* this, const Date& d2)
+//	// 这里需要注意的是，左操作数是this指向的调用函数的对象
+//	bool operator==(const Date& d2)
+//	{
+//		return _year == d2._year
+//			&& _month == d2._month
+//			&& _day == d2._day;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//void Test()
+//{
+//	Date d1(2018, 9, 26);
+//	Date d2(2018, 9, 27);
+//	cout << (d1 == d2) << endl;
+//}
