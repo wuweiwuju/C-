@@ -137,6 +137,16 @@ Date& Date::operator-=(int day)
 	}
 	return *this;
 }
+Date& Date::operator=(const Date& d)
+{
+	if (this != &d)
+	{
+		_year = d._year;
+		_month = d._month;
+		_day = d._day;
+	}
+	return *this;
+}
 //int Date::operator-(const Date& d)
 //{
 //

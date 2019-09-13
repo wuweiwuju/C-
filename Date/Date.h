@@ -38,6 +38,7 @@ public:
 	Date& operator+=(int day);//出作用域对象还在
 	Date& operator-=(int day);
 
+	Date& operator=(const Date& d);
 	//int operator-(const Date& d);
 
 	//// ++d d.operator++(&d)
