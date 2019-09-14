@@ -16,16 +16,16 @@ using namespace std;
 //		cout << _name << " " << _gender << " " << _age << endl;
 //	}
 //	char _name[20];
-/*	char _gender[3];
-	int _age;
-};
-int main()
-{
-	Student s;
-	s.SetStudentInfo("Peper", "男",19);
-	s.PrintStudentInfo();
-	return 0;
-}*/
+///*	char _gender[3];
+//	int _age;
+//};
+//int main()
+//{
+//	Student s;
+//	s.SetStudentInfo("Peper", "男",19);
+//	s.PrintStudentInfo();
+//	return 0;
+//}*/
 //1.nullptr 的 类型是 nullptr_t    也就是int*
 //2.NULL 类型是  int 
 //3.auto是新的类型指示符
@@ -54,40 +54,54 @@ int main()
 //	Student::InitStudent(&d1,10);
 //	Student::PrintStudent(&d1);
 //}
-class Date
-{
-	//里面不受访问限定符的限制
-public:
-	void Display()
-	{
-			cout << this->_year << "-" << _month << "-" << _day << endl;
-	}
-	void SetDate(int year, int month, int day)
-	{
-		_year = year;
-		_month = month;
-		_day = day;
-	}
-private:
-	int _year; // 年
-	int _month; // 月
-	int _day; // 日
-};
-int main()
-{
-	Date d1, d2;
-	d1.SetDate(2018, 5, 1);
-	d2.SetDate(2018, 7, 1);
-	d1.Display();
-	d2.Display();
-
-	Date* p = &d1;
-	p->Display();
-
-	Date* ps = nullptr;//
-	ps->Display();
-	return 0;
-}
+//class Person
+//{
+//public:
+//	void PrintPersonInfo();
+//private:
+//	char _name[20];
+//	char _gender[3];
+//	int _age;
+//};
+//// 这里需要指定PrintPersonInfo是属于Person这个类域
+//void Person::PrintPersonInfo()
+//{
+//	cout << _name << _gender << " " << _age << endl;
+//}
+//class Date
+//{
+//	//里面不受访问限定符的限制
+//public:
+//	void Display()
+//	{
+//			cout << this->_year << "-" << _month << "-" << _day << endl;
+//	}
+//	void SetDate(int year, int month, int day)
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//private:
+//	int _year; // 年
+//	int _month; // 月
+//	int _day; // 日
+//};
+//int main()
+//{
+//	Date d1, d2;
+//	d1.SetDate(2018, 5, 1);
+//	d2.SetDate(2018, 7, 1);
+//	d1.Display();
+//	d2.Display();
+//
+//	Date* p = &d1;
+//	p->Display();
+//
+//	Date* ps = nullptr;//
+//	ps->Display();
+//	return 0;
+//}
 //5.this 是不能更改的 
 //6.this指针存在哪?
 //本质存在栈上  因为它也是一个形参   但有时编译器会存在ecx寄存器
