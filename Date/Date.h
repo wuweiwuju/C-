@@ -39,17 +39,17 @@ public:
 	Date& operator-=(int day);
 
 	Date& operator=(const Date& d);
-	//int operator-(const Date& d);
+	int operator-(const Date& d);
 
 	//// ++d d.operator++(&d)
-	//Date operator++();
+	Date operator++();
 	//// d++ d.operator++(&d, 0)
-	//Date operator++(int);
+	Date operator++(int);
 
 	//// --d d.operator++(&d)
-	//Date operator--();
+	Date operator--();
 	//// d-- d.operator++(&d, 0)
-	//Date operator--(int);
+	Date operator--(int);
 
 
 private:

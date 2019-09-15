@@ -147,38 +147,81 @@ Date& Date::operator=(const Date& d)
 	}
 	return *this;
 }
-//int Date::operator-(const Date& d)
-//{
-//
-//}
-//
-//// ++d d.operator++(&d)
-//Date Date::operator++()
-//{
-//
-//}
-//// d++ d.operator++(&d, 0)
-//Date Date::operator++(int)
-//{
-//
-//}
-//
-//// --d d.operator++(&d)
-//Date Date::operator--()
-//{
-//
-//}
-//// d-- d.operator++(&d, 0)
-//Date Date::operator--(int)
-//{
-//
-//}
+int Date::operator-(const Date& d)
+{
+	/*int flag = 1;
+	Date max = *this;
+	Date min = d;
+	if (*this < d)
+	{
+		max = d;
+		min = *this;
+		flag = -1;
+	}
+	int count = 0;
+	while (min != max)
+	{
+		++min;
+		count++;
+	}
+	return count * flag;*/
+
+	int flag = 1;
+	Date max = *this;
+	Date min = d;
+	if (*this < d)
+	{
+		max = d;
+		min = *this;
+		flag = -1;
+	}
+	int count = 0;
+	while (min != max)
+	{
+		min++;
+		count++;
+	}
+	return flag * count;
+}
+
+// ++d d.operator++(&d)
+Date Date::operator++()
+{
+	*this += 1;
+	return *this;
+}
+// d++ d.operator++(&d, 0)
+Date Date::operator++(int)
+{
+	Date tmp(*this);
+	*this += 1;
+	return tmp;
+}
+
+// --d d.operator++(&d)
+Date Date::operator--()
+{
+	*this -= 1;
+	return *this;
+}
+// d-- d.operator++(&d, 0)
+Date Date::operator--(int)
+{
+	Date tmp(*this);
+	*this -= 1;
+	return tmp;
+}
 int main()
 {
 	Date d1(2018,11,14);
-	Date d2 = d1 + 100;
-	//d2.Print();
-	(d2 - 100).Print();
+	Date d2(2018, 11, 25);
+	////d2.Print();
+	//(d2 - 100).Print();
+
+	//Date d5(2015, 1, 1);
+	//Date ret = d5 - 1;
+	//ret.Print();
+	cout << d2 - d1 << endl;
 	system("pause");
 	return 0;
 }
