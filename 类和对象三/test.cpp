@@ -97,11 +97,10 @@ int main()
 //explicit 关键字
 //可以禁止构造函数的类型转换
 //因为那样可读性差所以不妨禁止掉
-#if 0
 class Date
 {
 public:
-	explicit Date(int year = 1999)
+	 explicit Date(int year = 1999)
 		: _year(year)
 	{
 	}
@@ -121,59 +120,145 @@ int main()
 	//构造函数 对于单个参数的构造函数，还有类型转换的作用
 	return 0;
 }
-#endif
 //什么情况下，编译器才会默认生成?
 //如果编译器感觉自己需要的时候就会生成->什么才是编译器需要的时候？
 //四个场景：
-class Time
-{
-public:
-	Time(int hour = 0, int minute = 0, int second = 0)
-		: _hour(hour)
-		, _minute(minute)
-		, _second(second)
-
-	{
-
-	}
-	Time(Time&)
-	{
-
-	}
-	Time& operator=(Time& a)
-	{
-		return *this;
-	}
-	~Time()
-	{
-
-	}
-private:
-	int _hour;
-	int _minute;
-	int _second;
-};
-class Date
-{
-public:
-	//Date()
-	//{
-
-	//}
-private:
-	int _year;
-	int _month;
-	int _day;
-	Time _t;
-};
-int main()
-{
-	Date d1;//日期类的构造函数
-	Date d2(d1);//Time(Time&)->找个调用位置->Date类的拷贝构造函数中
-	Date d3;
-	d3 = d1;
-
-
-	return 0;
-}
- 
+//class Time
+//{
+//public:
+//	Time(int hour = 0, int minute = 0, int second = 0)
+//		: _hour(hour)
+//		, _minute(minute)
+//		, _second(second)
+//
+//	{
+//
+//	}
+//	Time(Time&)
+//	{
+//
+//	}
+//	Time& operator=(Time& a)
+//	{
+//		return *this;
+//	}
+//	~Time()
+//	{
+//
+//	}
+//private:
+//	int _hour;
+//	int _minute;
+//	int _second;
+//};
+//class Date
+//{
+//public:
+//	//Date()
+//	//{
+//
+//	//}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//	Time _t;
+//};
+//int main()
+//{
+//	Date d1;//日期类的构造函数
+//	Date d2(d1);//Time(Time&)->找个调用位置->Date类的拷贝构造函数中
+//	Date d3;
+//	d3 = d1;
+//
+//
+//	return 0;
+//}
+//class Date
+//{
+//public:
+//	Date(int year, int month, int day)
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//class Date
+//{
+//public:
+//	Date(int year, int month, int day)
+//		: _year(year)
+//		, _month(month)
+//		, _day(day)
+//	{}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//【注意】
+//1. 每个成员变量在初始化列表中只能出现一次(初始化只能初始化一次)
+//2. 类中包含以下成员，必须放在初始化列表位置进行初始化：
+//引用成员变量
+//const成员变量
+//类类型成员(该类没有默认构造函数)
+//class A {
+//public: A(int a)
+//	:_a(a)
+//{}
+//private:
+//	int _a;
+//};
+//class B {
+//public: B(int a, int ref)
+//	:_aobj(a)
+//	, _ref(ref)
+//	, _n(10)
+//{}
+//private: A _aobj; // 没有默认构造函数
+//		 int& _ref; // 引用
+//		 const int _n; // const 
+//};
+//3. 尽量使用初始化列表初始化，因为不管你是否使用初始化列表，对于自定义类型成员变量，一定会先使
+//用初始化列表初始化。
+//class Time
+//{
+//public:
+//	Time(int hour = 0)
+//		:_hour(hour)
+//	{
+//		cout << "Time()" << endl;
+//	}
+//private:
+//	int _hour;
+//};
+//class Date
+//{
+//public:
+//	Date(int day)
+//	{}
+//private:
+//	int _day;
+//	Time _t;
+//};
+//int main()
+//{
+//	Date d(1);
+//}
+//4. 成员变量在类中声明次序就是其在初始化列表中的初始化顺序，与其在初始化列表中的先后次序无关
+//class Array
+//{
+//public:
+//	Array(int size)
+//		:_size(size)
+//		, _array((int*)malloc(sizeof(int)* _size))
+//	{}
+//private:
+//	int* _array;
+//	int _size;
+//};

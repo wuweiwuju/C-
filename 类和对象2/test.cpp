@@ -147,6 +147,27 @@ using namespace std;
 //
 //	return 0;
 //}
+//class Date
+//{
+//public:
+//	Date(int year = 1900, int month = 1, int day = 1)
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//int main()
+//{
+//	Date d1;
+//	// 这里d2调用的默认拷贝构造完成拷贝，d2和d1的值也是一样的。
+//	Date d2(d1);
+//		return 0;
+//}
 //深拷贝才可以解决这个程序会崩溃的问题，之后在学习
 //class String
 //{
@@ -194,7 +215,7 @@ using namespace std;
 //			_month = d._month;
 //			_day = d._day;
 //		}
-//		return *this;//出了作用域还在用引用返回
+//		return *this;//出了作用域还在   用引用返回
 //	}
 //	/*bool operator<(const Date& d1, const Date& d2) {
 //		return (d1._year < d2._year)
@@ -254,4 +275,243 @@ using namespace std;
 //	Date d1(2018, 9, 26);
 //	Date d2(2018, 9, 27);
 //	cout << (d1 == d2) << endl;
+//}
+
+//class Date
+//{
+//public:
+//	// 1.无参构造函数
+//	Date()
+//	{}
+//	// 2.带参构造函数
+//	Date(int year, int month, int day)
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//void TestDate()
+//{
+//	Date d1; // 调用无参构造函数
+//	Date d2(2015, 1, 1); // 调用带参的构造函数
+//	// 注意：如果通过无参构造函数创建对象时，对象后面不用跟括号，否则就成了函数声明
+//	// 以下代码的函数：声明了d3函数，该函数无参，返回一个日期类型的对象
+//	Date d3();
+//}
+//class Date
+//{
+//public:
+//	/*
+//	// 如果用户显式定义了构造函数，编译器将不再生成
+//	Date (int year, int month, int day)
+//	{
+//	_year = year;
+//	_month = month;
+//	_day = day;
+//	}
+//	*/
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//void Test()
+//{
+//	// 没有定义构造函数，对象也可以创建成功，因此此处调用的是编译器生成的默认构造函数
+//		Date d;
+//}
+// 默认构造函数
+//class Date
+//{
+//public:
+//	Date()
+//	{
+//		_year = 1900;
+//		_month = 1;
+//		_day = 1;
+//	}
+//	Date(int year = 1900, int month = 1, int day = 1)
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//// 以下测试函数能通过编译吗？
+//void Test()
+//{
+//	Date d1;
+//}
+//class Time
+//{
+//public:
+//	Time()
+//	{
+//		cout << "Time()" << endl;
+//		_hour = 0;
+//		_minute = 0;
+//		_second = 0;
+//	}
+//private:
+//	int _hour;
+//	int _minute;
+//	int _second;
+//};
+//class Date
+//{
+//private:
+//	// 基本类型(内置类型)
+//	int _year;
+//	int _month;
+//	int _day;
+//	// 自定义类型
+//	Time _t;
+//};
+//int main()
+//{
+//	Date d;
+//	return 0;
+//}
+// 我们看看这个函数，是不是很僵硬？
+//class Date
+//{
+//public:
+//	Date(int year)
+//	{
+//		// 这里的year到底是成员变量，还是函数形参？
+//		year = year;
+//	}
+//private:
+//	int year;
+//};
+//// 所以我们一般都建议这样
+//class Date
+//{
+//public:
+//	Date(int year)
+//	{
+//		_year = year;
+//	}
+//private:
+//	int _year;
+//};
+//// 或者这样。
+//class Date
+//{
+//public:
+//	Date(int year)
+//	{
+//		m_year = year;
+//	}
+//private:
+//	int m_year;
+//};
+//class String
+//{
+//public:
+//	String(const char* str = "jack")
+//	{
+//		_str = (char*)malloc(strlen(str) + 1);
+//		strcpy(_str, str);
+//	}
+//	~String()
+//	{
+//		cout << "~String()" << endl;
+//		free(_str);
+//	}
+//private:
+//	char* _str;
+//};
+//class Person
+//{
+//private:
+//	String _name;
+//	int _age;
+//};
+//int main()
+//{
+//	Person p;
+//	return 0;
+//}
+//class Date
+//{
+//public:
+//	Date(int year = 1900, int month = 1, int day = 1)
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//	Date(const Date& d)
+//	{
+//		_year = d._year;
+//		_month = d._month;
+//		_day = d._day;
+//	}
+//	Date& operator=(const Date& d)
+//	{
+//		if (this != &d)
+//		{
+//			_year = d._year;
+//			_month = d._month;
+//			_day = d._day;
+//		}
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//class Date
+//{
+//public:
+//	Date(int year = 1900, int month = 1, int day = 1)
+//	{
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//int main()
+//{
+//	Date d1;
+//	Date d2(2018,10, 1);
+//	// 这里d1调用的编译器生成operator=完成拷贝，d2和d1的值也是一样的。
+//	d1 = d2;
+//		return 0;
+//}
+//class String
+//{
+//public:
+//	String(const char* str = "jack")
+//	{
+//		_str = (char*)malloc(strlen(str) + 1);
+//		strcpy(_str, str);
+//	}
+//	~String()
+//	{
+//		cout << "~String()" << endl;
+//			free(_str);
+//	}
+//private:
+//	char* _str;
+//};
+//int main()
+//{
+//	String s1("hello");
+//	String s2("world");
+//	s1 = s2;
 //}

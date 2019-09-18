@@ -215,12 +215,12 @@ int main()
 {
 	Date d1(2018,11,14);
 	Date d2(2018, 11, 25);
-	////d2.Print();
-	//(d2 - 100).Print();
+	//d2.Print();
+	(d2 - 100).Print();
 
-	//Date d5(2015, 1, 1);
-	//Date ret = d5 - 1;
-	//ret.Print();
+	Date d5(2015, 1, 1);
+	Date ret = d5 - 1;
+	ret.Print();
 	cout << d2 - d1 << endl;
 	system("pause");
 	return 0;
