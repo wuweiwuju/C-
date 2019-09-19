@@ -119,54 +119,54 @@ using namespace std;
 //不可以
 //2. 非静态成员函数可以调用类的静态成员函数吗？
 //可以
-//class Date
-//{
-//public:
-//	//友元函数
-//	friend ostream& operator<<(ostream& _cout, const Date& d);
-//	Date(int year = 1900, int month = 1, int day = 1)
-//		: _year(year)
-//		, _month(month)
-//		, _day(day)
-//	{
-//		cout << "Date(int,int,int):" << this << endl;
-//	}
-//	void PrintDate()
-//	{
-//		cout << _year << "-" << _month << "-" << _day << endl;
-//	}
-//	//void operator<<(ostream& _cout)
-//	//{
-//	//	cout << _year << "-" << _month << "-" << _day << endl;
-//	//}
-//private:
-//	int _year;
-//	int _month;
-//	int _day;
-//};
+class Date
+{
+public:
+	//友元函数
+	friend ostream& operator<<(ostream& _cout, const Date& d);
+	Date(int year = 1900, int month = 1, int day = 1)
+		: _year(year)
+		, _month(month)
+		, _day(day)
+	{
+		cout << "Date(int,int,int):" << this << endl;
+	}
+	void PrintDate()
+	{
+		cout << _year << "-" << _month << "-" << _day << endl;
+	}
+	//void operator<<(ostream& _cout)
+	//{
+	//	cout << _year << "-" << _month << "-" << _day << endl;
+	//}
+private:
+	int _year;
+	int _month;
+	int _day;
+};
 //
 ////条件
 ////1.两个参数 ： 参数一一定为ostream&,参数二输出的内容
 ////2.必须有ostream&的返回值，支持连续输出
 ////3.少做格式化操作：比如换行
 ////4.将该函数作为类的友元函数
-//ostream& operator<<(ostream& _cout,const Date& d)
-//{
-//	//_cout<<d.GetYear()<<"-"<<d.GetMonth()<<"-"d.GetDay();
-//	cout << d._year << "-" << d._month << "-" << d._day;
-//	return _cout;
-//}
-//int main()
-//{
-//	Date d(2019, 3, 24);
-//	d.PrintDate();
-//	cout << 10 << endl;//cout<<10   cout<<endl;
-//	cout << d << endl;
-//	//cout << d;
-//	//d.operator<<(cout);
-//	//d << cout;
-//	return 0;
-//}
+ostream& operator<<(ostream& _cout,const Date& d)
+{
+	//_cout<<d.GetYear()<<"-"<<d.GetMonth()<<"-"d.GetDay();
+	cout << d._year << "-" << d._month << "-" << d._day;
+	return _cout;
+}
+int main()
+{
+	Date d(2019, 3, 24);
+	d.PrintDate();
+	cout << 10 << endl;//cout<<10   cout<<endl;
+	cout << d << endl;
+	//cout << d;
+	//d.operator<<(cout);
+	//d << cout;
+	return 0;
+}
 //https://www.zhihu.com/question/274746738
 //1.友元函数的优点：提高代码的效率
 //缺点：破坏了封装性
@@ -221,3 +221,102 @@ using namespace std;
 //友元关系不能传递
 
 //一个类如何防止被拷贝 ?
+
+//class Date; // 前置声明
+//class Time
+//{
+//	friend class Date; // 声明日期类为时间类的友元类，则在日期类中就直接访问Time类中的私有成员变量
+//public:
+//	Time(int hour = 0, int minute = 0, int second = 0)
+//		: _hour(hour)
+//		, _minute(minute)
+//		, _second(second)
+//	{}
+//private:
+//	int _hour;
+//	int _minute;
+//	int _second;
+//};
+//class Date
+//{
+//public:
+//	Date(int year = 1900, int month = 1, int day = 1)
+//		: _year(year)
+//		, _month(month)
+//		, _day(day)
+//	{
+//		
+//	}
+//	void SetTimeOfDate(int hour, int minute, int second)
+//	{
+//		// 直接访问时间类私有的成员变量
+//		_t._hour = hour;
+//		_t._minute = minute;
+//		_t._second = second;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//	Time _t;
+//};
+//int main()
+//{
+//	return 0;
+//}
+//class Date
+//{
+//public:
+//	Date(int year, int month, int day)
+//		: _year(year)
+//		, _month(month)
+//		, _day(day)
+//	{}
+//	ostream& operator<<(ostream& _cout)
+//	{
+//		_cout << _year << "-" << _month << "-" << _day;
+//		return _cout;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//int main()
+//{
+//	Date d(2017, 12, 24);
+//	d << cout;
+//	return 0;
+//}
+//class Date
+//{
+//	friend ostream& operator<<(ostream& _cout, const Date& d);
+//	friend istream& operator>>(istream& _cin, const Date& d);
+//public:
+//	Date(int year = 1, int month =1, int day = 1)
+//		: _year(year)
+//		, _month(month)
+//		, _day(day)
+//	{}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//ostream& operator<<(ostream& _cout, const Date& d) {
+//	_cout << d._year << "-" << d._month << "-" << d._day;
+//	return _cout;
+//}
+//istream& operator>>(istream& _cin, const Date& d) {
+//	_cin >> d._year;
+//	_cin >> d._month;
+//	_cin >> d._day;
+//	return _cin;
+//}
+//int main()
+//{
+//	Date d;
+//	cin >> d;
+//	cout << d << endl;
+//	return 0;
+//}
