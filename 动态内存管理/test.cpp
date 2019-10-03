@@ -35,6 +35,18 @@ using namespace std;
 //	Test* p2 = new Test[10];
 //	delete[] p2;
 //}
+//void Test()
+//{
+//	// 动态申请一个int类型的空间
+//	int* ptr4 = new int;
+//	// 动态申请一个int类型的空间并初始化为10
+//	int* ptr5 = new int(10);
+//	// 动态申请10个int类型的空间
+//	int* ptr6 = new int[3];
+//	delete ptr4;
+//	delete ptr5;
+//	delete[] ptr6;
+//}
 //int main()
 //{
 
@@ -239,3 +251,32 @@ int main()
 //new
 //1.申请空间
 //2.调用构造函数
+
+//int globalVar = 1;
+//static int staticGlobalVar = 1;
+//void Test()
+//{
+//	static int staticVar = 1;
+//	int localVar = 1;
+//	int num1[10] = { 1, 2, 3, 4 };
+//	char char2[] = "abcd";
+//	char* pChar3 = "abcd";
+//	int* ptr1 = (int*)malloc(sizeof(int) * 4);
+//	int* ptr2 = (int*)calloc(4, sizeof(int));
+//	int* ptr3 = (int*)realloc(ptr2, sizeof(int) * 4);
+//	free(ptr1);
+//	free(ptr3);
+//}
+//1. 选择题：
+//选项 : A.栈 B.堆 C.数据段 D.代码段
+//	globalVar在哪里？__C__ staticGlobalVar在哪里？_C___
+//	staticVar在哪里？_C___ localVar在哪里？__A__
+//	num1 在哪里？_A___
+//	char2在哪里？__A__ * char2在哪里？A___
+//	pChar3在哪里？_A___ * pChar3在哪里？__D__
+//	ptr1在哪里？_A___ * ptr1在哪里？__B__
+//	2. 填空题：
+//	sizeof(num1) = __40__;
+//sizeof(char2) = __5__; strlen(char2) = __4__;
+//sizeof(pChar3) = _4___; strlen(pChar3) = _4___;
+//sizeof(ptr1) = __4__;

@@ -60,7 +60,7 @@ using namespace std;
 //成功：调用  失败：编译器报错
 
 
-//函数模板和函数是可以同时存在的，但是调用先调用函数
+////函数模板和函数是可以同时存在的，但是调用先调用函数
 //template<typename T>
 ////template<class T>
 //T Add(T left, T right)
@@ -80,7 +80,20 @@ using namespace std;
 //	Add<>(1, 2); //调用函数模板 隐式类型的实例化
 //	return 0;
 //}
-
+//// 专门处理int的加法函数
+//int Add(int left, int right) {
+//	return left + right;
+//}
+//// 通用加法函数
+//template<class T1, class T2>
+//T1 Add(T1 left, T2 right) {
+//	return left + right;
+//}
+//void Test()
+//{
+//	Add(1, 2); // 与非函数模板类型完全匹配，不需要函数模板实例化
+//	Add(1, 2.0); // 模板函数可以生成更加匹配的版本，编译器根据实参生成更加匹配的Add函数
+//}
 //类模板
 //typedef int DataType;
 //template<typename T>
