@@ -292,6 +292,11 @@ namespace lpf
 
 		char& operator[](size_t index)
 		{
+			if (*_pCount > 1)
+			{
+				string strTemp(_str);
+				Swap(strTemp);
+			}
 			return _str[index];
 		}
 
@@ -303,6 +308,11 @@ namespace lpf
 		~string()
 		{
 			Release();
+		}
+		void Swap(string& s)
+		{
+			swap(_str, s._str);
+			swap(_pCount, s._pCount);
 		}
 	private:
 		void Release()
@@ -330,6 +340,8 @@ void TestString()
 	s1 = s3;//s1 s3 s4共用一份空间  s2共用一份
 
 	s2 = s4;//s1 s2 s3 s4共用同一份
+
+	s1[0] = 'H';
 }
 int main()
 {
