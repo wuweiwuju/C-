@@ -1,0 +1,9 @@
+string和char*有啥区别？
+1.string是一个类，char*是一个指向字符的数组
+	string封装了char*,管理这个字符串，是一个char*型的容器
+2.string不用考虑内存释放和越界
+	string管理char*所分配的内存，每一次string的复制，取值
+	都由string类负责维护，不用担心越界和取值越界等
+3.string提供了一系列的字符串操作函数
+
+
