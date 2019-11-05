@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "只出现一次的数字III", "只出现一次的数字III.vcxproj", "{FD80CF39-6FD7-4638-8E94-DDDCA9A35CF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD80CF39-6FD7-4638-8E94-DDDCA9A35CF8}.Debug|x64.ActiveCfg = Debug|x64
+		{FD80CF39-6FD7-4638-8E94-DDDCA9A35CF8}.Debug|x64.Build.0 = Debug|x64
+		{FD80CF39-6FD7-4638-8E94-DDDCA9A35CF8}.Debug|x86.ActiveCfg = Debug|Win32
+		{FD80CF39-6FD7-4638-8E94-DDDCA9A35CF8}.Debug|x86.Build.0 = Debug|Win32
+		{FD80CF39-6FD7-4638-8E94-DDDCA9A35CF8}.Release|x64.ActiveCfg = Release|x64
+		{FD80CF39-6FD7-4638-8E94-DDDCA9A35CF8}.Release|x64.Build.0 = Release|x64
+		{FD80CF39-6FD7-4638-8E94-DDDCA9A35CF8}.Release|x86.ActiveCfg = Release|Win32
+		{FD80CF39-6FD7-4638-8E94-DDDCA9A35CF8}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D79607AB-046F-49E0-8ACD-237914D38C9C}
+	EndGlobalSection
+EndGlobal

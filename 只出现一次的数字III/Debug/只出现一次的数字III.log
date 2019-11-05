@@ -1,0 +1,4 @@
+﻿  test.cpp
+D:\代码\C++\只出现一次的数字III\test.cpp(12,20): warning C4018:  “<”: 有符号/无符号不匹配
+D:\代码\C++\只出现一次的数字III\test.cpp(27,20): warning C4018:  “<”: 有符号/无符号不匹配
+  只出现一次的数字III.vcxproj -> D:\代码\C++\只出现一次的数字III\Debug\只出现一次的数字III.exe
