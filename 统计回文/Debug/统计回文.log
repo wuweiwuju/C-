@@ -1,0 +1,3 @@
+﻿  test.cpp
+D:\代码\C++\统计回文\test.cpp(22,21): warning C4018:  “<=”: 有符号/无符号不匹配
+  统计回文.vcxproj -> D:\代码\C++\统计回文\Debug\统计回文.exe
