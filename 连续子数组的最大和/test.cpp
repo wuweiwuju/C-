@@ -24,7 +24,7 @@ public:
 		return count;
 	}
 };*/
-#include<iostream>
+/*#include<iostream>
 #include<algorithm>
 #include<vector>
 using namespace std;
@@ -46,5 +46,37 @@ int main()
 		count = max(res, count);
 	}
 	cout << count << endl;
+	return 0;
+}*/
+#include<iostream>
+#include<vector>
+using namespace std;
+int main()
+{
+	int n = 0;
+	cin >> n;
+	vector<int> array;
+	array.resize(n);
+	for (int i = 0; i < n; i++)
+	{
+		cin >> array[i];
+	}
+	int sum = 0;
+	int max = array[0];
+	int count = 0;
+	for (int i = 0; i < n; i++)
+	{
+		sum += array[i];
+		if (sum < array[i + 1])
+		{
+			sum = array[i + 1];
+			i++;
+		}
+		if (sum > max)
+		{
+			max = sum;
+		}
+	}
+	cout << max << endl;
 	return 0;
 }
