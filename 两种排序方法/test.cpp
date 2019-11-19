@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS 3.
+/*#define _CRT_SECURE_NO_WARNINGS 3.
 #include<iostream>
 #include<stdlib.h>
 #include<string>
@@ -47,5 +47,48 @@ int main()
 		}
 	}
 	cout << "none" << endl;
+	return 0;
+}*/
+
+#include<iostream>
+#include<vector>
+#include<string>
+using namespace std;
+int main()
+{
+	int n = 0;
+	cin >> n;
+	vector<string> str;
+	str.resize(n);
+	bool lexsym = true;
+	bool lensym = true;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> str[i];
+	}
+	for (int i = 0; i < n - 1; i++)
+	{
+		if (str[i].size() >= str[i + 1].size())
+		{
+			lensym = false;
+			break;
+		}
+	}
+	for (int i = 0; i < n - 1; i++)
+	{
+		if (str[i] > str[i + 1])
+		{
+			lexsym = false;
+			break;
+		}
+	}
+	if (lensym && lexsym)
+		cout << "both" << endl;
+	else if (lensym)
+		cout << "lengths" << endl;
+	else if (lexsym)
+		cout << "lexicographically" << endl;
+	else
+		cout << "none" << endl;
 	return 0;
 }
