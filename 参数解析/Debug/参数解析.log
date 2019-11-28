@@ -1,0 +1,5 @@
+﻿  test.cpp
+D:\代码\C++\参数解析\test.cpp(12,21): warning C4018:  “<”: 有符号/无符号不匹配
+D:\代码\C++\参数解析\test.cpp(24,21): warning C4018:  “<”: 有符号/无符号不匹配
+D:\代码\C++\参数解析\test.cpp(37,31): warning C4018:  “<”: 有符号/无符号不匹配
+  参数解析.vcxproj -> D:\代码\C++\参数解析\Debug\参数解析.exe
