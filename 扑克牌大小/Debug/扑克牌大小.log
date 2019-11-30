@@ -1,0 +1,4 @@
+﻿  test.cpp
+D:\代码\C++\扑克牌大小\test.cpp(18,21): warning C4018:  “<”: 有符号/无符号不匹配
+D:\代码\C++\扑克牌大小\test.cpp(36,21): warning C4018:  “<”: 有符号/无符号不匹配
+  扑克牌大小.vcxproj -> D:\代码\C++\扑克牌大小\Debug\扑克牌大小.exe
