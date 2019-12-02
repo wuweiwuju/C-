@@ -1,0 +1,4 @@
+﻿  test.cpp
+D:\代码\C++\MP3光标\test.cpp(19,22): warning C4018:  “<”: 有符号/无符号不匹配
+D:\代码\C++\MP3光标\test.cpp(42,22): warning C4018:  “<”: 有符号/无符号不匹配
+  MP3光标.vcxproj -> D:\代码\C++\MP3光标\Debug\MP3光标.exe
