@@ -1,0 +1,3 @@
+﻿  test.cpp
+D:\代码\C++\素数\test.cpp(44,22): warning C4018:  “<”: 有符号/无符号不匹配
+  素数.vcxproj -> D:\代码\C++\素数\Debug\素数.exe
