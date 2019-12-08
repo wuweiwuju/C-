@@ -1,0 +1,3 @@
+﻿  test.cpp
+D:\代码\C++\洗牌\test.cpp(12,20): warning C4018:  “<”: 有符号/无符号不匹配
+  洗牌.vcxproj -> D:\代码\C++\洗牌\Debug\洗牌.exe
