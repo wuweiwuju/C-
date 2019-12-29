@@ -1,0 +1,3 @@
+﻿  test.cpp
+D:\代码\C++\树根\test.cpp(52,21): warning C4018:  “<”: 有符号/无符号不匹配
+  树根.vcxproj -> D:\代码\C++\树根\Debug\树根.exe
