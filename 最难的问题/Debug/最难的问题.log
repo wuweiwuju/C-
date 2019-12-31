@@ -1,0 +1,3 @@
+﻿  test.cpp
+D:\代码\C++\最难的问题\test.cpp(9,21): warning C4018:  “<”: 有符号/无符号不匹配
+  最难的问题.vcxproj -> D:\代码\C++\最难的问题\Debug\最难的问题.exe
