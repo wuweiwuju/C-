@@ -157,7 +157,7 @@ int main()
 }
 //string:
 //vector<char>
-//分开的原因就是 不同的两种类型，还有就是vector没有'\0'  如果维护的话，它就不嗯能够实现其它类型了
+//分开的原因就是 不同的两种类型，还有就是vector没有'\0'  如果维护的话，它就不能实现其它类型了
 //1.构造
 //空构造函数
 //n个值data元素的构造
@@ -188,3 +188,34 @@ int main()
 //2.erase(pos)--pos的迭代器失效 pos-->vector中的某个位置-->T类型对象
 //解决迭代器失效
 //给迭代器重新赋值
+
+// 常见的迭代器失效的场景
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+int main()
+{
+	int a[] = { 1, 2, 3, 4 };
+	vector<int> v(a, a + sizeof(a) / sizeof(int));
+	// 实现删除v中的所有偶数
+	// 下面的程序会崩溃掉，如果是偶数，erase导致it失效
+	// 对失效的迭代器进行++it，会导致程序崩溃
+	vector<int>::iterator it = v.begin();
+	while (it != v.end())
+	{
+		if (*it % 2 == 0)
+			v.erase(it);
+			++it;
+	}
+	// 以上程序要改成下面这样，erase会返回删除位置的下一个位置
+	vector<int>::iterator it = v.begin();
+	while (it != v.end())
+	{
+		if (*it % 2 == 0)
+			it = v.erase(it);
+		else
+			++it;
+	}
+	return 0;
+}

@@ -3,6 +3,8 @@
 using namespace  std;
 #include<assert.h>
 #include<algorithm>
+#include<vector>
+#include<string>
 namespace lpf
 {
 	template<class T>
@@ -240,9 +242,23 @@ void TestVector5()
 	}
 	cout << endl;
 }
+void TestVector6()
+{
+	vector<char> vch;
+	vch.push_back('\0');
+	cout << vch.size() << endl;//Êä³ö1
+
+	string s3 = "";
+	cout << s3.size() << endl;//Êä³ö0
+
+	string s4 = "\0";
+	cout << s4.size() << endl;//Êä³ö0
+
+}
 int main()
 {
 	//TestVector1();
-	TestVector5();
+	//TestVector5();
+	TestVector6();
 	return 0;
 }
