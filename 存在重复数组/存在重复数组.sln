@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "存在重复数组", "存在重复数组\存在重复数组.vcxproj", "{7B9008A6-8B33-49A1-9F2A-FE0FA20B6667}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B9008A6-8B33-49A1-9F2A-FE0FA20B6667}.Debug|x64.ActiveCfg = Debug|x64
+		{7B9008A6-8B33-49A1-9F2A-FE0FA20B6667}.Debug|x64.Build.0 = Debug|x64
+		{7B9008A6-8B33-49A1-9F2A-FE0FA20B6667}.Debug|x86.ActiveCfg = Debug|Win32
+		{7B9008A6-8B33-49A1-9F2A-FE0FA20B6667}.Debug|x86.Build.0 = Debug|Win32
+		{7B9008A6-8B33-49A1-9F2A-FE0FA20B6667}.Release|x64.ActiveCfg = Release|x64
+		{7B9008A6-8B33-49A1-9F2A-FE0FA20B6667}.Release|x64.Build.0 = Release|x64
+		{7B9008A6-8B33-49A1-9F2A-FE0FA20B6667}.Release|x86.ActiveCfg = Release|Win32
+		{7B9008A6-8B33-49A1-9F2A-FE0FA20B6667}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54888F1B-9DC9-4B32-A8D0-846224EEB76E}
+	EndGlobalSection
+EndGlobal
