@@ -65,7 +65,7 @@ void BenchmarkConcurrentMalloc(size_t ntimes, size_t nworks, size_t rounds) {
 					ConcurrentFree(v[i]);
 				}
 				size_t end2 = clock();
-					v.clear();
+				v.clear();
 				malloc_costtime += end1 - begin1;
 				free_costtime += end2 - begin2;
 			}
@@ -89,5 +89,6 @@ int main()
 	cout << endl << endl;
 	BenchmarkConcurrentMalloc(10000, 4, 10);
 	cout << "==========================================================" << endl;
+	system("pause");
 	return 0;
 }

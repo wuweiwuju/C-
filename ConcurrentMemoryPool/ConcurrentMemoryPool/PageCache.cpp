@@ -1,6 +1,6 @@
 #include"PageCache.h"
 
-Span* PageCache::_NewSpan(size_t numpage)
+Span* PageCache::NewSpan(size_t numpage)
 {
 	if (!_spanlist[numpage].Empty())
 	{
@@ -49,15 +49,14 @@ Span* PageCache::_NewSpan(size_t numpage)
 
 	return NewSpan(numpage);
 }
-
-Span* PageCache::NewSpan(size_t numpage)
+/*Span* PageCache::NewSpan(size_t numpage)
 {
 	_mtx.lock();
 	Span* span = _NewSpan(numpage);
 	_mtx.unlock();
 
 	return span;
-}
+}*/
 
 void PageCache::ReleaseSpanToPageCache(Span* span)
 {
@@ -81,6 +80,11 @@ void PageCache::ReleaseSpanToPageCache(Span* span)
 		}
 
 		//进行合并
+		//如果合并超过128页的span，那就不要合并
+		if (span->_pagesize + prevSpan->_pagesize >= MAX_PAGES)
+		{
+			break;
+		}
 		span->_pageid = prevSpan->_pageid;//页号合并到前一个页的页号
 		span->_pagesize += prevSpan->_pagesize;//页数进行相加
 		for (PAGE_ID i = 0; i < prevSpan->_pagesize; ++i)//合并后进行新的map映射
@@ -107,7 +111,11 @@ void PageCache::ReleaseSpanToPageCache(Span* span)
 		{
 			break;
 		}
-
+		//如果合并超过128页的span，那就不要合并
+		if (span->_pagesize + nextSpan->_pagesize >= MAX_PAGES)
+		{
+			break;
+		}
 		span->_pagesize += nextSpan->_pagesize;
 		for (PAGE_ID i = 0; i < nextSpan->_pagesize; ++i)
 		{

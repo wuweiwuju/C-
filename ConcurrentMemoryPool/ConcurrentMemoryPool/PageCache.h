@@ -7,7 +7,7 @@ class PageCache
 {
 public:
 	//申请一个新的Span
-	Span* _NewSpan(size_t num);
+	//Span* _NewSpan(size_t num);
 	Span* NewSpan(size_t num);
 
 	void ReleaseSpanToPageCache(Span* span);
@@ -24,7 +24,7 @@ private:
 	PageCache(const PageCache&) = delete;
 	SpanList _spanlist[MAX_PAGES]; // 存储span的双向链表，但是这内面的span内存都没有被切割
 
-	std::map<PAGE_ID, Span*> _idSpanMap;
+	std::unordered_map<PAGE_ID, Span*> _idSpanMap;
 	std::mutex _mtx;
 };
 
