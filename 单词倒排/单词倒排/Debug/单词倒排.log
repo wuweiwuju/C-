@@ -1,0 +1,4 @@
+﻿  test.cpp
+d:\代码\c++\单词倒排\单词倒排\test.cpp(13): warning C4018: “<”: 有符号/无符号不匹配
+d:\代码\c++\单词倒排\单词倒排\test.cpp(15): warning C4018: “<”: 有符号/无符号不匹配
+  单词倒排.vcxproj -> D:\代码\C++\单词倒排\Debug\单词倒排.exe
