@@ -1,0 +1,47 @@
+﻿  test.cpp
+d:\代码\c++\红与黑\红与黑\test.cpp(48): error C2146: 语法错误: 缺少“>”(在标识符“v”的前面)
+d:\代码\c++\红与黑\红与黑\test.cpp(48): error C2146: 语法错误: 缺少“>”(在标识符“count”的前面)
+d:\代码\c++\红与黑\红与黑\test.cpp(49): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+d:\代码\c++\红与黑\红与黑\test.cpp(50): error C2947: 应由“>”终止 模板参数列表，却找到“<”
+d:\代码\c++\红与黑\红与黑\test.cpp(50): error C2143: 语法错误: 缺少“)”(在“常数”的前面)
+d:\代码\c++\红与黑\红与黑\test.cpp(50): error C2143: 语法错误: 缺少“;”(在“常数”的前面)
+d:\代码\c++\红与黑\红与黑\test.cpp(50): error C2059: 语法错误:“常数”
+d:\代码\c++\红与黑\红与黑\test.cpp(50): error C2059: 语法错误:“)”
+d:\代码\c++\红与黑\红与黑\test.cpp(53): error C2065: “x”: 未声明的标识符
+d:\代码\c++\红与黑\红与黑\test.cpp(53): error C2065: “y”: 未声明的标识符
+d:\代码\c++\红与黑\红与黑\test.cpp(53): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+d:\代码\c++\红与黑\红与黑\test.cpp(53): error C2440: “初始化”: 无法从“char”转换为“int [1][1]”
+  d:\代码\c++\红与黑\红与黑\test.cpp(53): note: 没有转换为数组类型，但有转换为数组的引用或指针
+d:\代码\c++\红与黑\红与黑\test.cpp(54): error C2059: 语法错误:“++”
+d:\代码\c++\红与黑\红与黑\test.cpp(55): error C2065: “x”: 未声明的标识符
+d:\代码\c++\红与黑\红与黑\test.cpp(55): error C2065: “y”: 未声明的标识符
+d:\代码\c++\红与黑\红与黑\test.cpp(55): error C2065: “m”: 未声明的标识符
+d:\代码\c++\红与黑\红与黑\test.cpp(55): error C2065: “n”: 未声明的标识符
+d:\代码\c++\红与黑\红与黑\test.cpp(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+d:\代码\c++\红与黑\红与黑\test.cpp(55): error C2365: “NumBlacktiles”: 重定义；以前的定义是“函数”
+  d:\代码\c++\红与黑\红与黑\test.cpp(48): note: 参见“NumBlacktiles”的声明
+d:\代码\c++\红与黑\红与黑\test.cpp(56): error C2065: “x”: 未声明的标识符
+d:\代码\c++\红与黑\红与黑\test.cpp(56): error C2065: “y”: 未声明的标识符
+d:\代码\c++\红与黑\红与黑\test.cpp(56): error C2065: “m”: 未声明的标识符
+d:\代码\c++\红与黑\红与黑\test.cpp(56): error C2065: “n”: 未声明的标识符
+d:\代码\c++\红与黑\红与黑\test.cpp(56): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+d:\代码\c++\红与黑\红与黑\test.cpp(56): error C2365: “NumBlacktiles”: 重定义；以前的定义是“函数”
+  d:\代码\c++\红与黑\红与黑\test.cpp(48): note: 参见“NumBlacktiles”的声明
+d:\代码\c++\红与黑\红与黑\test.cpp(57): error C2065: “x”: 未声明的标识符
+d:\代码\c++\红与黑\红与黑\test.cpp(57): error C2065: “y”: 未声明的标识符
+d:\代码\c++\红与黑\红与黑\test.cpp(57): error C2065: “m”: 未声明的标识符
+d:\代码\c++\红与黑\红与黑\test.cpp(57): error C2065: “n”: 未声明的标识符
+d:\代码\c++\红与黑\红与黑\test.cpp(57): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+d:\代码\c++\红与黑\红与黑\test.cpp(57): error C2365: “NumBlacktiles”: 重定义；以前的定义是“函数”
+  d:\代码\c++\红与黑\红与黑\test.cpp(48): note: 参见“NumBlacktiles”的声明
+d:\代码\c++\红与黑\红与黑\test.cpp(58): error C2065: “x”: 未声明的标识符
+d:\代码\c++\红与黑\红与黑\test.cpp(58): error C2065: “y”: 未声明的标识符
+d:\代码\c++\红与黑\红与黑\test.cpp(58): error C2065: “m”: 未声明的标识符
+d:\代码\c++\红与黑\红与黑\test.cpp(58): error C2065: “n”: 未声明的标识符
+d:\代码\c++\红与黑\红与黑\test.cpp(58): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+d:\代码\c++\红与黑\红与黑\test.cpp(58): error C2365: “NumBlacktiles”: 重定义；以前的定义是“函数”
+  d:\代码\c++\红与黑\红与黑\test.cpp(48): note: 参见“NumBlacktiles”的声明
+d:\代码\c++\红与黑\红与黑\test.cpp(59): error C2059: 语法错误:“}”
+d:\代码\c++\红与黑\红与黑\test.cpp(59): error C2143: 语法错误: 缺少“;”(在“}”的前面)
+d:\代码\c++\红与黑\红与黑\test.cpp(61): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+d:\代码\c++\红与黑\红与黑\test.cpp(61): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
