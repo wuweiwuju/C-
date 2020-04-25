@@ -1,0 +1,4 @@
+﻿  test.cpp
+d:\代码\c++\剪花布条\剪花布条\test.cpp(16): warning C4018: “<”: 有符号/无符号不匹配
+d:\代码\c++\剪花布条\剪花布条\test.cpp(19): warning C4018: “<”: 有符号/无符号不匹配
+  剪花布条.vcxproj -> D:\代码\C++\剪花布条\Debug\剪花布条.exe
