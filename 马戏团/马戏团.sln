@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "马戏团", "马戏团\马戏团.vcxproj", "{34CD3617-45C4-4999-90EF-0D52C7E184BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34CD3617-45C4-4999-90EF-0D52C7E184BF}.Debug|x64.ActiveCfg = Debug|x64
+		{34CD3617-45C4-4999-90EF-0D52C7E184BF}.Debug|x64.Build.0 = Debug|x64
+		{34CD3617-45C4-4999-90EF-0D52C7E184BF}.Debug|x86.ActiveCfg = Debug|Win32
+		{34CD3617-45C4-4999-90EF-0D52C7E184BF}.Debug|x86.Build.0 = Debug|Win32
+		{34CD3617-45C4-4999-90EF-0D52C7E184BF}.Release|x64.ActiveCfg = Release|x64
+		{34CD3617-45C4-4999-90EF-0D52C7E184BF}.Release|x64.Build.0 = Release|x64
+		{34CD3617-45C4-4999-90EF-0D52C7E184BF}.Release|x86.ActiveCfg = Release|Win32
+		{34CD3617-45C4-4999-90EF-0D52C7E184BF}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {536C8079-EEFB-4D80-A1B3-CDC62D4916A3}
+	EndGlobalSection
+EndGlobal
